@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff;
+            text-align: center;
+            font-size: 64px;
+               }
+
+        p {
+            font-size: 24px;
+            color: #ffffff;
+            border: 2px solid white;
+            animation-name: load;
+            animation-duration: 20s;
+            animation-iteration-count: 1;
+         
+        }
+
+        #counter {
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            right: 0px;
+        }
+
+        body {
+            background-color: #000000;
+            
+        }
+
+        a {
+            display: inline;
+            color: white;
+            background-color: darkblue;
+            border: 1px solid white;
+            border-radius: 3px, 3px;
+            animation-name: load;
+            animation-duration: 20s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes load {
+            0% {opacity: 0}
+      
+            100% {opacity: 1}
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to the game!</h1>
+    <p id="rules">  
+    You will be playing the game. <br/> 
+    If you cannot clear the game, it's game over and you must restart. 
+    Are you ready to start playing?
+    <a href="game2withhelp.html">Yes!</a><a href="titlepage.html">No!</a>
+    </p>
+    
+</body>
+</html>

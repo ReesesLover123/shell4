@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img {
+            height: 250px;
+            width: 200px;
+            border: 6px solid blue;
+            border-radius: 25px; 
+            margin: 200px 0px 30px 30px;
+            animation-name: shuffle;
+            animation-iteration-count: 1; 
+            animation-duration: 5s;
+           
+            }
+
+        .hide {
+            display: none;
+        }
+
+
+        p {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        #counter {
+          
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            right: 0px;
+            background-color: lightcyan;
+            border: 3px solid black;
+            border-radius: 3px;
+            font-size: 24px;
+
+        }
+
+        @keyframes shuffle {
+            0% {height: 0px;
+                width: 0px; 
+            }
+            
+            100% {height: 250px;
+                  width: 200px;
+            }
+
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script>
+
+        var alpha = document.getElementById("1");
+        var beta = document.getElementById("2");
+        var charlie = document.getElementById("3");
+        var delta = document.getElementById("counter");
+        var echo = 0;
+        var foxtrot = 0;
+
+        function next() {
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            alpha.src = "shell.jpg";
+            beta.src = "shell.jpg";
+            charlie.src = "shell.jpg";
+
+        }
+     
+       
+        function shasell() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results");
+            var counter = document.getElementById("counter");
+
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+
+            if ((correct == 1)) {
+                echo += 1;
+                foxtrot += 1;
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose correct!"
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+                
+            } else if ((correct == 2)) {
+                foxtrot += 1;
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 3)) {
+                foxtrot += 1;
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            }
+
+        }
+        function sashay() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results")
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+            if ((correct == 1)) {
+                foxtrot += 1;
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 2)) {
+                echo += 1;
+                foxtrot += 1;
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose correct!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 3)) {
+                foxtrot += 1;
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            }
+
+        }
+        function sashayn() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results")
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+            if ((correct == 1)) {
+                foxtrot += 1;
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            } else if ((correct == 2)) {
+                foxtrot += 1;
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            } else if ((correct == 3)) {
+                echo += 1;
+                foxtrot += 1;
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose correctly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="counter" class="literally">You've found it this many times!</div>
+      <div class="volcano"><img src="shell.jpg" id="1" onclick="shasell()"/><img src="shell.jpg" onclick="sashay()" id="2"/><img src="shell.jpg" onclick="sashayn()" id="3"/></div> 
+    <p id="results">Where is the pearl located?</p>
+    <button class="hide" id="reset" onclick="reload()">Are you ready to try again?</button>
+    <button class="hide" id="pass" onclick="next()">Click me to try again!</button>
+    </body>
+</html>
