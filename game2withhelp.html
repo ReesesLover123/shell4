@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE html> 
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -66,6 +66,8 @@
             alpha.src = "shell.jpg";
             beta.src = "shell.jpg";
             charlie.src = "shell.jpg";
+            document.getElementById("pass").classList.add('hide');
+            document.getElementById("results").innerHTML = "Where is the pearl located?"
 
         }
      
@@ -88,17 +90,22 @@
                 document.getElementById("1").src = "right.jpg"
                 document.getElementById("results").innerHTML = "You chose correct!"
                 counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+                document.getElementById('pass').classList.remove('hide');
                 
             } else if ((correct == 2)) {
                 foxtrot += 1;
                 document.getElementById("2").src = "right.jpg";
                 results.innerHTML = "You chose incorrectly!";
                 counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+                document.getElementById('pass').classList.remove('hide');
+
             } else if ((correct == 3)) {
                 foxtrot += 1;
                 document.getElementById("3").src = "right.jpg";
                 results.innerHTML = "You chose incorrectly!";
                 counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+                document.getElementById('pass').classList.remove('hide');
+
             }
 
         }
@@ -161,6 +168,8 @@
             }
 
         }
+
+        
     </script>
 </head>
 <body>
